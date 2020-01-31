@@ -1,8 +1,10 @@
 version: '3'
 services:
   asterisk:
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: asterisk
-    image: kmaksimov/centos7-asterisk13
     volumes:
       - "./asterisk:/etc/asterisk"
     network_mode: "host"
